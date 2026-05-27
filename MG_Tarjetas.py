@@ -31,9 +31,9 @@ def guardar_datos_tarjeta(archivo, usuario, numero_tarjeta, cvc):
     with open(archivo, "r", encoding = "utf-8") as t:
         tarjetas = json.load(t)
     
-    # Validar que el CVC sea numerico y tenga 3-4 digitos
-    if not cvc.isdigit() or len(cvc) < 3 or len(cvc) > 4:
-        print("Error: CVC invalido. Debe tener 3 o 4 digitos numericos.")
+    # Validar que el CVC sea numerico y tenga 3 digitos
+    if not cvc.isdigit() or len(cvc) != 3:
+        print("Error: CVC invalido. Debe tener 3 digitos numericos.")
         return False
     
     # Validar que el CVC no pertenezca a otra tarjeta de otro usuario
