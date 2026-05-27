@@ -107,7 +107,7 @@ def menu_gestion_usuarios(archivo_usuarios, usuarios):
                 case 4:
                     # Salir
                     print("Saliendo")
-                    exit()
+                    break
                 
                 case _:
                     print("Opcion no valida. Ingrese un numero entre 1 y 4.")
