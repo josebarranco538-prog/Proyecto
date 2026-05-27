@@ -36,11 +36,11 @@ def guardar_datos_tarjeta(archivo, usuario, numero_tarjeta, cvc):
         print("Error: CVC invalido. Debe tener 3 digitos numericos.")
         return False
     
-    # Validar que el CVC no pertenezca a otra tarjeta de otro usuario
+    # Validar que el número de tarjeta no esté registrado para otro usuario
     for otro_usuario, datos in tarjetas.items():
         if otro_usuario != usuario:
-            if datos.get("numero_tarjeta") != numero_tarjeta and datos.get("cvc") == cvc:
-                print("Error: Este CVC no es de esta tarjeta.")
+            if datos.get("numero_tarjeta") == numero_tarjeta:
+                print("Error: Este número de tarjeta ya está registrado.")
                 return False
     
     tarjetas[usuario] = {"numero_tarjeta": numero_tarjeta, "cvc": cvc, "saldo": 1_000_000}
