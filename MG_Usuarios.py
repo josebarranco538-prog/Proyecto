@@ -53,6 +53,10 @@ def menu_gestion_usuarios(archivo_usuarios, usuarios):
                         user_login = input("Usuario: ").strip()
                         pass_login = input("Contrasena: ").strip()
                         
+                        if not user_login or not pass_login:
+                            print("Por favor ingrese usuario y contraseña. Los campos no pueden estar vacios.")
+                            continue
+                        
                         if user_login in usuarios and usuarios[user_login] == pass_login:
                             print("Login correcto")
                             return user_login
@@ -70,6 +74,10 @@ def menu_gestion_usuarios(archivo_usuarios, usuarios):
                     
                     username = input("Usuario: ").strip()
                     password = input("Contrasena: ").strip()
+                    
+                    if not username or not password:
+                        print("Por favor ingrese usuario y contraseña. Los campos no pueden estar vacios.")
+                        continue
                     
                     if username in usuarios:
                         print("Ese usuario ya existe")
